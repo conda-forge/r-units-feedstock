@@ -1,4 +1,4 @@
-{% set version = '0.4-4' %}
+{% set version = '0.5-1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/units_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/units/units_{{ version }}.tar.gz
-  sha256: a5bafe44acf0d0ebeb39122a98bb43756b4697fa245e8328038349772288ca8e
+  sha256: 749bc6b81d623d27e6a8784eff34526aa4e371ce4880e91f49cbdd7de6830b1e
 
 build:
   number: 0
-  skip: true  # [win]
+  skip: true  # [win32]
 
   rpaths:
     - lib/R/lib/
