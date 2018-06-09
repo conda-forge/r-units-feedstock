@@ -14,14 +14,16 @@ Summary: Support for measurement units in R vectors; automatic propagation, conv
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-units-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-units-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-units-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-units-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-units-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-units-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-units-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-units-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-units-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-units-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-units-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-units-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-units/badges/version.svg)](https://anaconda.org/conda-forge/r-units)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-units/badges/downloads.svg)](https://anaconda.org/conda-forge/r-units)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--units-green.svg)](https://anaconda.org/conda-forge/r-units) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-units.svg)](https://anaconda.org/conda-forge/r-units) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-units.svg)](https://anaconda.org/conda-forge/r-units) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-units.svg)](https://anaconda.org/conda-forge/r-units) |
 
 Installing r-units
 ==================
