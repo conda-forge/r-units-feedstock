@@ -25,10 +25,12 @@ build:
 requirements:
   build:
     - r-base
+    - r-rcpp
     - r-udunits2 >=0.13
 
   run:
     - r-base
+    - r-rcpp
     - r-udunits2 >=0.13
 
 test:
