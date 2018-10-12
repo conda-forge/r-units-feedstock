@@ -1,5 +1,4 @@
-{% set version = '0.5-1' %}
-
+{% set version = '0.6-1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,42 +9,64 @@ package:
 source:
   fn: units_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/units_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/units/units_{{ version }}.tar.gz
-  sha256: 749bc6b81d623d27e6a8784eff34526aa4e371ce4880e91f49cbdd7de6830b1e
+    - {{ cran_mirror }}/src/contrib/units_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/units/units_{{ version }}.tar.gz
+  sha256: f180c56241c2b6dc6406eabf983a2bcb6e88db7936ad599bbd75bf845aa04e3d
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}grep              # [win]
+    - {{posix}}autoconf
+    - {{posix}}automake          # [not win]
+    - {{posix}}automake-wrapper  # [win]
+    - {{posix}}pkg-config
+    - {{posix}}make
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-    - r-udunits2 >=0.13
-
+    - r-rcpp
+    - udunits2
   run:
     - r-base
-    - r-udunits2 >=0.13
+    - {{native}}gcc-libs         # [win]
+    - r-rcpp
+    - udunits2
 
 test:
   commands:
-    - $R -e "library('units')"  # [not win]
+    - $R -e "library('units')"           # [not win]
     - "\"%R%\" -e \"library('units')\""  # [win]
 
 about:
-  home: https://github.com/edzer/units/
+  home: https://github.com/r-quantities/units/
   license: GPL-2
-  summary: Support for measurement units in R vectors; automatic propagation, conversion, derivation
-    and simplification of units; raising errors in case of unit incompatibility. Compatible
-    with the difftime class. Uses the UNIDATA udunits library and unit database for
-    unit conversion and compatibility checking.
+  summary: 'Support for measurement units in R vectors, matrices and arrays: automatic propagation,
+    conversion, derivation and simplification of units; raising errors in case of unit
+    incompatibility. Compatible with the POSIXct, Date and difftime  classes. Uses the
+    UNIDATA udunits library and unit database for  unit compatibility checking and conversion.'
   license_family: GPL2
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
