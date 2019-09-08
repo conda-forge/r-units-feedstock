@@ -1,4 +1,4 @@
-{% set version = '0.6-3' %}
+{% set version = '0.6-4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/units_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/units/units_{{ version }}.tar.gz
-  sha256: 03de88d9dcfe80d22dd3813413f33657c576aed24a8091dbfc7f68602020a64f
+  sha256: 25720a06d7b68cbfa50f2396a2a0981256084a9481008ee1ecae6974daafe0cb
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -61,14 +61,15 @@ about:
     (2016, <doi:10.32614/RJ-2016-061>), included in this package as a vignette; see
     ''citation("units")'' for details.'
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
 
 # Package: units
-# Version: 0.6-3
+# Version: 0.6-4
 # Title: Measurement Units for R Vectors
 # Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"), email = "edzer.pebesma@uni-muenster.de", comment = c(ORCID = "0000-0001-8049-7069")), person("Thomas", "Mailund", role = "aut", email = "mailund@birc.au.dk"), person("Tomasz", "Kalinowski", role = "aut"), person("James", "Hiebert", role = "ctb"), person("Inaki", "Ucar", role = "ctb", email = "iucar@fedoraproject.org", comment = c(ORCID = "0000-0001-6403-5550")) )
 # Depends: R (>= 3.0.2)
@@ -84,8 +85,8 @@ extra:
 # RoxygenNote: 6.1.1
 # Encoding: UTF-8
 # NeedsCompilation: yes
-# Packaged: 2019-05-02 14:16:41 UTC; edzer
+# Packaged: 2019-08-22 05:40:44 UTC; edzer
 # Author: Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>), Thomas Mailund [aut], Tomasz Kalinowski [aut], James Hiebert [ctb], Inaki Ucar [ctb] (<https://orcid.org/0000-0001-6403-5550>)
 # Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 # Repository: CRAN
-# Date/Publication: 2019-05-03 21:50:03 UTC
+# Date/Publication: 2019-08-22 06:30:02 UTC
