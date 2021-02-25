@@ -3,7 +3,7 @@ About r-units
 
 Home: https://github.com/r-quantities/units/
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-units-feedstock/blob/master/LICENSE.txt)
 
