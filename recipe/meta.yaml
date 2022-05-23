@@ -23,6 +23,8 @@ requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
     - r-rcpp                     # [build_platform != target_platform]
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-rcpp                     # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
@@ -64,6 +66,7 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
+
 
 # Package: units
 # Version: 0.6-4
