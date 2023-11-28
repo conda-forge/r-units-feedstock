@@ -1,4 +1,4 @@
-{% set version = "0.8-4" %}
+{% set version = "0.8-5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/units_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/units/units_{{ version }}.tar.gz
-  sha256: 499da1891e6167af42f501894444dcc9f5d8195017456bb6aca8aeec3515c7fc
+  sha256: d95e80af760b053e10a1e33ce1f0c1280a84e84bd4b1d9c34d1fe9fc153603b1
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -55,15 +55,8 @@ about:
   home: https://r-quantities.github.io/units/
   dev_url: https://github.com/r-quantities/units/
   license: GPL-2.0-only
-  summary: "Support for measurement units in R vectors, matrices
-    and arrays: automatic propagation, conversion, derivation
-    and simplification of units; raising errors in case of unit
-    incompatibility. Compatible with the POSIXct, Date and difftime 
-    classes. Uses the UNIDATA udunits library and unit database for 
-    unit compatibility checking and conversion.
-    Documentation about 'units' is provided in the paper by Pebesma, Mailund &
-    Hiebert (2016, <doi:10.32614/RJ-2016-061>), included in this package as a
-    vignette; see 'citation(\"units\")' for details."
+  summary: "Support for measurement units in R vectors, matrices and arrays: automatic propagation, conversion, derivation and simplification of units; raising errors in case of unit incompatibility. Compatible with the POSIXct, Date and difftime classes. Uses the UNIDATA udunits library and unit database for unit compatibility
+    checking and conversion. Documentation about 'units' is provided in the paper by Pebesma, Mailund & Hiebert (2016, <doi:10.32614/RJ-2016-061>), included in this package as a vignette; see 'citation(\"units\")' for details."
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
