@@ -41,6 +41,7 @@ requirements:
     - r-base
     - r-rcpp
     - udunits2
+    - libexpat                     # [win]
   run:
     - r-base
     - r-rcpp
